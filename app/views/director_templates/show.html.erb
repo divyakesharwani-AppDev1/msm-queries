@@ -1,0 +1,61 @@
+<h1>Director #3 </h1>
+
+<h1>
+  Director <%= @the_id %> details
+</h1>
+
+<a href="/directors" class="btn btn-block btn-outline-secondary">
+  Go back
+</a>
+
+&nbsp;|&nbsp;
+
+<a href="/delete_director/<%= @the_id %>" class="btn btn-block btn-outline-secondary">
+  Delete director
+</a>
+
+<hr>
+
+<dl>
+  <dt>
+    Name
+  </dt>
+  <dd>
+    <%= @the_director["name"]%>
+  </dd>
+
+  <dt>
+    <%= @the_director["dob"]%>
+  </dt>
+  <dd>
+    1959-01-28
+  </dd>
+
+  <dt>
+    Bio
+  </dt>
+  <dd>
+    <%= @the_director["bio"]%> 
+  </dd>
+
+  <dt>
+    Image
+  </dt>
+  <dd>
+    <%= @the_director["image"]%>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+        <%= time_ago_in_words(@the_director.created_at)%> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@the_director.updated_at)%> ago
+  </dd>
+</dl>
