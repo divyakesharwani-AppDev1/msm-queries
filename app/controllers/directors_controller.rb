@@ -23,11 +23,13 @@ class DirectorsController < ApplicationController
 
   def director_details
 
-    #  Parameters: {"an_id"=>"42"}
+    #  Parameters: {"an_id"=>"4"}
 
     @the_id = params.fetch("an_id")
 
     @the_director = Director.all.where({:id => @the_id}).at(0)
+
+    @filmography = Movie.where({:director_id => @the_id})
 
 
 
